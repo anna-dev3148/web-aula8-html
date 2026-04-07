@@ -1,10 +1,10 @@
 # Exercícios da Aula 8 de Desenvolvimento Web I - ADS
 
-## 
-- Link: []()
+## Exercício 1 
+- Link: [Exercício 1]()
   
-## 
-- Link: []()
+## Exercício 2
+- Link: [Exercício 2]()
 
-## 
-- Link: []()
+## Exercício 3
+- Link: [Exercício 3]()
