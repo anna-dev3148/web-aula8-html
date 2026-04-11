@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendendo JS</title>
+    <script>
+      window.onload = inicio;
+
+      function inicio() {
+        let botao_guardar = document.getElementById("btn_guardar");
+        botao_guardar.addEventListener("click", guardar);
+
+        let botao_adicionar = document.getElementById("btn_adicionar");
+        botao_adicionar.addEventListener("click", adicionar);
+
+        let botao_retirar = document.getElementById("btn_retirar");
+        botao_retirar.addEventListener("click", retirar);
+
+        let botao_limpar = document.getElementById("btn_limpar");
+        botao_limpar.addEventListener("click", limpar);
+
+        let botao_mostrar = document.getElementById("btn_mostrar");
+        botao_mostrar.addEventListener("click", mostrar);
+      }
+
+      let memoria = undefined;
+
+      // [fazer a funcao armazenar o numero na memoria.] -ok
+      function guardar() {
+        let campo = document.getElementById("numero");
+        let digitado = campo.value;
+        memoria = parseInt(digitado);
+        campo.value = "Guardado...";
+      }
+
+      // [fazer a funcão adicionar ao numero guardado] -ok
+      function adicionar() {
+        let campo = document.getElementById("numero");
+        let digitado = campo.value;
+        let valor = parseInt(digitado);
+        if (memoria !== undefined && memoria !== null) {
+          memoria = memoria + valor;
+        }
+      }
+
+      // [fazer a função subtrair do nuemero guardado] -ok
+      function retirar() {
+        let campo = document.getElementById("numero");
+        let digitado = campo.value;
+        let valor = parseInt(digitado);
+        if (memoria !== undefined && memoria !== null) {
+          memoria = memoria - valor;
+        }
+      }
+
+      // [fazer a função limpar a memoria] -ok
+      function limpar() {
+        memoria = null;
+      }
+
+      //[equivalente ao "=" na calc.] -ok
+      function mostrar() {
+        let campo = document.getElementById("numero");
+        if (memoria === undefined) {
+          campo.value = "Undefined";
+        } else if (memoria === null) {
+          campo.value = "Nada / Vazio :(";
+        } else {
+          campo.value = memoria;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <label for="numero">Número:</label>
+    <input type="text" id="numero" /><br />
+    <button id="btn_guardar">Guardar</button><br />
+    <button id="btn_adicionar">Adicionar</button><br />
+    <button id="btn_retirar">Retirar</button><br />
+    <button id="btn_limpar">Limpar</button><br />
+    <button id="btn_mostrar">Mostrar</button>
+  </body>
+</html>
